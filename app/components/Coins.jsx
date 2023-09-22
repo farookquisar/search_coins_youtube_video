@@ -18,8 +18,8 @@ export default function Coins({ coins })
           /> */}
           <h3>{coins.firstName}</h3> 
           
-          <h3>{coins.middleName}</h3>
-          <h3>{coins.lastName}</h3>
+          <h3>{coins.firstName}</h3>
+          <h3>{coins.firstName}</h3>
           {/* <p>{coin.symbol}</p>
                     <p>{coin.price}</p> */}
         </li>

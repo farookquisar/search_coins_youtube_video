@@ -13,7 +13,8 @@ export default function SearchCoins({ getSearchResults }) {
 
     const coin = await response.json()
 
-    getSearchResults(coin)
+     getSearchResults(coin)
+     console.log(coin);
 
    }
 

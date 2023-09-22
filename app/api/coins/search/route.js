@@ -25,8 +25,8 @@ export async function GET(request)
     const query = searchParams.get('query');
     console.log(query);
 
-    console.log(coins.firstName.toLowerCase().includes(query.toLowerCase()) || coins.firstName.toLowerCase().includes(query.toLowerCase()));
-    const filteredCoins = coins.firstName.toLowerCase().includes(query.toLowerCase()) ? coins : '';
+    // console.log(coins.firstName.toLowerCase().includes(query.toLowerCase()) || coins.firstName.toLowerCase().includes(query.toLowerCase()));
+    const filteredCoins = coins?.firstName.toLowerCase().includes(query.toLowerCase()) ? coins : '';
 
     // const filteredCoins = coins.firstName.filter((coin) => {
     //     return coin.firstName.toLowerCase().includes(query.toLowerCase()) || coin.firstName.toLowerCase().includes(query.toLowerCase())
