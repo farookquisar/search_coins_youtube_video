@@ -2,12 +2,11 @@ import { NextResponse } from "next/server";
 
 async function fetchCoins()
 {
-    const response = await fetch('https://quapexweb.qu.edu.qa/ords/qucust/qu-google-acct-segment/get-employee-name', {
+    const response = await fetch('https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0', {
         "method": "GET",
         "headers": {
-            'input': '15568',
-            'apiKey': process.env.NEXT_PUBLIC_ORCL_CLIENT_ID,
-            'host': 'quapexweb.qu.edu.qa'
+            'X-RapidAPI-Key': 'd60309a2dbmsh632044c5269d41cp115ad2jsn95dbc3ebd84c',
+            'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
         }
 
     })
@@ -23,15 +22,11 @@ export async function GET(request)
     const { searchParams } = new URL(request.url);
     console.log(searchParams.get('query'))
     const query = searchParams.get('query');
-    console.log(query);
 
-    // console.log(coins.firstName.toLowerCase().includes(query.toLowerCase()) || coins.firstName.toLowerCase().includes(query.toLowerCase()));
-    const filteredCoins = coins; //coins?.firstName.toLowerCase().includes(query.toLowerCase()) ? coins : '';
+    const filteredCoins = coins.data.coins.filter((coin) =>
+    {
+        return coin.name.toLowerCase().includes(query.toLowerCase()) || coin.symbol.toLowerCase().includes(query.toLowerCase())
+    })
 
-    // const filteredCoins = coins.firstName.filter((coin) => {
-    //     return coin.firstName.toLowerCase().includes(query.toLowerCase()) || coin.firstName.toLowerCase().includes(query.toLowerCase())
-    // })
-    console.log(filteredCoins);
     return NextResponse.json(filteredCoins);
-    // return <></>
 }

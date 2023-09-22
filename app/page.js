@@ -14,8 +14,7 @@ export default function Home()
     {
       const response = await fetch('/api/coins');
       const coins = await response.json();
-      console.log('coins',coins);
-       setCoins(coins);
+      setCoins(coins.data.coins);
     }
 
     getCoins();
