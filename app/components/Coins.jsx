@@ -16,7 +16,8 @@ export default function Coins({ coins })
             height={70}
             priority
           /> */}
-          <h3>{coins.firstName}</h3>
+          <h3>{coins.firstName}</h3> 
+          
           <h3>{coins.middleName}</h3>
           <h3>{coins.lastName}</h3>
           {/* <p>{coin.symbol}</p>
