@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 
-async function fetchCoins(){
+async function fetchCoins()
+{
     const response = await fetch('https://quapexweb.qu.edu.qa/ords/qucust/qu-google-acct-segment/get-employee-name', {
         "method": "GET",
         "headers": {
             'input': '15568',
-            'apiKey': 'QnFwLUR5dno1RmdJSFMybGs2LWE2QS4uOnA5Z3ZiSnJYNmJ4dE05MGFEVC11cGcuLg==',
+            'apiKey': process.env.NEXT_PUBLIC_ORCL_CLIENT_ID,
             'host': 'quapexweb.qu.edu.qa'
         }
 

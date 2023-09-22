@@ -6,7 +6,7 @@ async function fetchCoins()
         "method": "GET",
         "headers": {
             'input': '15568',
-            'apiKey': 'QnFwLUR5dno1RmdJSFMybGs2LWE2QS4uOnA5Z3ZiSnJYNmJ4dE05MGFEVC11cGcuLg==',
+            'apiKey': process.env.NEXT_PUBLIC_ORCL_CLIENT_ID,
             'host': 'quapexweb.qu.edu.qa'
         }
 
@@ -26,7 +26,7 @@ export async function GET(request)
     console.log(query);
 
     console.log(coins.firstName.toLowerCase().includes(query.toLowerCase()) || coins.firstName.toLowerCase().includes(query.toLowerCase()));
-    const filteredCoins = coins.firstName.toLowerCase().includes(query.toLowerCase())?coins:'';
+    const filteredCoins = coins.firstName.toLowerCase().includes(query.toLowerCase()) ? coins : '';
 
     // const filteredCoins = coins.firstName.filter((coin) => {
     //     return coin.firstName.toLowerCase().includes(query.toLowerCase()) || coin.firstName.toLowerCase().includes(query.toLowerCase())
