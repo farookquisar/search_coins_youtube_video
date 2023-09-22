@@ -1,21 +1,23 @@
 import { NextResponse } from "next/server";
 
-async function fetchCoins() {
-    const response = await fetch('https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0', {
+async function fetchCoins(){
+    const response = await fetch('https://quapexweb.qu.edu.qa/ords/qucust/qu-google-acct-segment/get-employee-name', {
         "method": "GET",
         "headers": {
-                'X-RapidAPI-Key': 'coinrankingdafcaa12eca7ecd9b70ad468b211a1154e7b4de37d06a2ea',
-                'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+            'input': '15568',
+            'apiKey': 'QnFwLUR5dno1RmdJSFMybGs2LWE2QS4uOnA5Z3ZiSnJYNmJ4dE05MGFEVC11cGcuLg==',
+            'host': 'quapexweb.qu.edu.qa'
         }
 
-        })
-        
-        const coins = await response.json();
-        return coins;
+    })
+
+    const coins = await response.json();
+    return coins;
 
 }
 
-export async function GET(request) {
+export async function GET(request)
+{
     const coins = await fetchCoins();
     return NextResponse.json(coins);
 }
