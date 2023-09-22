@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['cdn.coinranking.com']
+        domains: ['quapexweb.qu.edu.qa']
     }
 }
 
